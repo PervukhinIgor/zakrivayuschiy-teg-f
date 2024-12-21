@@ -342,6 +342,38 @@ body:has(.dialog[open]) {
   width: 198px;
 }
 
+.brightness {
+  filter: brightness(50%);
+}
+
+.contrast {
+  filter: contrast(145%);
+}
+
+.blur {
+  filter: blur(0.2rem);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.saturation {
+  filter: saturate(500%);
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.hue-rotate {
+  filter: hue-rotate(135deg);
+}
+
+.multiple-filter {
+  filter: contrast(120%) saturate(200%) ;
+}
+
 @media screen and (width <= 375px) {
   .page {
     min-width: 375px;
