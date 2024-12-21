@@ -304,7 +304,7 @@
   width: 39px;
 }
 
-.dialog {
+.dialog[open] {
   height: 197px;
   padding: 30px 42px;
   overflow: hidden;
