@@ -327,7 +327,7 @@ body:has(.dialog[open]) {
   padding-bottom: 4px;
 }
 
-.dialog__lable-container {
+.dialog[open] .dialog__lable-container {
   display: flex;
   justify-content: center;
   gap: 20px;
