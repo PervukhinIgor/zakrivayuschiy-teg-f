@@ -49,8 +49,8 @@ dialog {
 }
 
 dialog:not([open]) {
-pointer-events: none;
-opacity: 0;
+  pointer-events: none;
+  opacity: 0;
 } 
 
 .visually-hidden {

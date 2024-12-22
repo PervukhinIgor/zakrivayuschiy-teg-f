@@ -2,8 +2,8 @@
 :root {
   --main-font: "Inter-Vriable";
   --accent-font: "PressStart2P";
-  --title-width: 700;
-  --main-text-width: 400;
+  --title-weight: 700;
+  --main-text-weight: 400;
   --background-image: url(../images/background.png);
   --background-color: #fff;
   --border-color: #000;

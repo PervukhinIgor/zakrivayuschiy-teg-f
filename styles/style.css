@@ -9,26 +9,6 @@
 
 */
 
-@keyframes scale {
-  0% {
-    transform: scale(1) ;
-  }
-
-  100% {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes transparent {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: var(--heart-main-color);
-  }
-}
-
 .page {
   display: flex;
   flex-direction: column;
@@ -39,9 +19,9 @@
   font-size: 18px;
   font-variation-settings: "wght" var(--main-text-weight);
   background-image: 
-    repeating-linear-gradient(#d3d3d3 , transparent 2px),
-    repeating-linear-gradient(90deg, #d3d3d3, transparent 2px),
-    linear-gradient(#e7e7e7,#1a1a1a);
+    repeating-linear-gradient(90deg,#d3d3d3, transparent 2px),
+    repeating-linear-gradient(#d3d3d3, transparent 2px),
+    linear-gradient(#e7e7e7, #1a1a1a);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,7 +33,7 @@
 }
 
 .header {
-  font-family: var(--accent-font), serif;
+  font-family: var(--accent-font), sans-serif;
   text-align: center;
   background-color: var(--background-color);
   border: 2px solid var(--border-color);
@@ -92,15 +72,18 @@
 }
 
 .main__section-list-card-title {
+  font-variation-settings: "wght" var(--title-weight);
   font-size: 18px;
   line-height: 25px;
   padding: 3px 24px 3px 10px;
-  max-height: 54px;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .main__section-list-card-image-container {
-  width: 100%;
+  height: 698px;
   position: relative;
+  margin-bottom: 27px;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .main__section-list-card-image {
@@ -109,11 +92,11 @@
   block-size: 100%;
   object-fit: cover;
   object-position: center;
-  margin-bottom: 27px;
+  
 }
 
 .main__section-list-card-image-lable {
-  font-family: var(--accent-font), serif;
+  font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   mix-blend-mode: hard-light;
   opacity: 50%;
@@ -136,6 +119,7 @@
 } 
 
 .main__section-list-card-article {
+  font-variation-settings: "wght" var(--main-text-weight);
   padding-left: 25px;
   padding-right: 25px;
   margin-bottom: 27px;
@@ -147,57 +131,62 @@
 
 
 .like-icon {
-  margin-top: 1px;
   height: 38px;
+  width: 38px;
 }
 
 .like-icon .core {
   fill: transparent;
-  transition: fill 0.3s 0.03s;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon:hover .core {
   fill: var(--contour-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .core {
   fill: var(--heart-main-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .core {
   fill: var(--heart-main-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon .main-body {
   fill: transparent;
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
   fill: var(--contour-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .main-body {
   fill: var(--heart-main-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-main-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon .contour {
+  transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--heart-main-color);
-  transition: fill 0.3s 0.06s;
+  transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .heart {
   animation: scale 0.3s ease-in 0.1s 1;
+  transform-origin: center;
 }
 
 .like-icon .sparks {
@@ -220,11 +209,12 @@
 
 .button {
   position: relative;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy, serif;
   font-size: 14px;
   color: var(--button-color);
   background: transparent;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .button svg {
@@ -250,7 +240,6 @@
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
-  transition: 0.5s ease-in-out;
 }
 
 .button__text {
@@ -261,11 +250,15 @@
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center ;
   background-color: transparent;
   cursor: pointer;
   padding: 0;
   border: none;
-  height: 38px;
+  height: 34px;
+  transition: 0.3s ease;
+  
 }
 
 .card__icon-button:focus {
@@ -274,7 +267,6 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
-  transition: 0.3s ease;
 }
 
 .card__like-button {
@@ -305,9 +297,7 @@
 }
 
 .dialog[open] {
-  height: 197px;
   padding: 30px 42px;
-  overflow: hidden;
 }
 
 .dialog[open]::backdrop {
@@ -324,7 +314,7 @@ body:has(.dialog[open]) {
   text-transform: uppercase;
   width: 100%;
   padding-top: 10px;
-  padding-bottom: 4px;
+  padding-bottom: 10px;
 }
 
 .dialog[open] .dialog__lable-container {
@@ -335,7 +325,7 @@ body:has(.dialog[open]) {
 }
 
 .dialog__lable {
-  font-family: var(--accent-font), serif;
+  font-family: var(--accent-font), fantasy, serif;
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
@@ -388,6 +378,10 @@ body:has(.dialog[open]) {
 
   .main {
     gap: 50px;
+  }
+
+  .main__section-list-card-image-container {
+    height: 375px;
   }
 
   .main__section-list-card-image-lable {
