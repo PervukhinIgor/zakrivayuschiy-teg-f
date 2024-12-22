@@ -4,7 +4,10 @@
   --accent-font: "PressStart2P";
   --title-weight: 700;
   --main-text-weight: 400;
-  --background-image: url(../images/background.png);
+  --background-image: 
+    repeating-linear-gradient(90deg,#d3d3d3, transparent 2px),
+    repeating-linear-gradient(#d3d3d3, transparent 2px),
+    linear-gradient(#e7e7e7, #1a1a1a);
   --background-color: #fff;
   --border-color: #000;
   --lable-border-color: #fff;

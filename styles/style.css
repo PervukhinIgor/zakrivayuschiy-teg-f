@@ -18,10 +18,7 @@
   font-family: var(--main-font), sans-serif;
   font-size: 18px;
   font-variation-settings: "wght" var(--main-text-weight);
-  background-image: 
-    repeating-linear-gradient(90deg,#d3d3d3, transparent 2px),
-    repeating-linear-gradient(#d3d3d3, transparent 2px),
-    linear-gradient(#e7e7e7, #1a1a1a);
+  background-image: var(--background-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -110,16 +107,16 @@
   right: 25px;
 }
 
-@supports((text-stroke: 1px var(--lable-border-color)) or (-webkit-text-stroke: 1px var(--lable-border-color))) {
+@supports(-webkit-text-stroke: 1px var(--lable-border-color)) {
   .main__section-list-card-image-lable {
     -webkit-text-stroke: 1px var(--lable-border-color);
-    text-stroke: 1px var(--lable-border-color);
     text-shadow: none;
   }
 } 
 
 .main__section-list-card-article {
   font-variation-settings: "wght" var(--main-text-weight);
+  line-height: 21px;
   padding-left: 25px;
   padding-right: 25px;
   margin-bottom: 27px;
@@ -293,11 +290,14 @@
 }
 
 .floppy-big-icon {
+  flex-shrink: 0;
   width: 39px;
 }
 
 .dialog[open] {
-  padding: 30px 42px;
+  min-width: 341px;
+  padding: 30px;
+  border: 2px solid var(--border-color);
 }
 
 .dialog[open]::backdrop {
@@ -329,7 +329,7 @@ body:has(.dialog[open]) {
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
-  width: 198px;
+  max-width: 234px;
 }
 
 .brightness {
@@ -394,5 +394,14 @@ body:has(.dialog[open]) {
   
   .floppy-icon {
     width: 28px;
+  }
+
+  .dialog__lable {
+    max-width: 198px;
+  }
+
+  .dialog[open] {
+    margin: 248px 17px;
+    padding: 28px 40px;
   }
 }
