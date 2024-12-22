@@ -401,7 +401,8 @@ body:has(.dialog[open]) {
   }
 
   .dialog[open] {
-    margin: 248px 17px;
+    margin-left: 17px;
+    margin-right: 17px;
     padding: 28px 40px;
   }
 }
